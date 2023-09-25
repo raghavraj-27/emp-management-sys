@@ -36,23 +36,36 @@ void updateEmployeeByEmpID(struct Employee *emp) {
 
         switch (choice2) {
         case '1':
+        repeatNewFname:
           printf("\nEnter new first name: ");
           char *updatedFname = readStringFromUser();
+          if(validateNameAndNatioanlity(updatedFname, strlen(updatedFname)) == 0) {
+            printf("\n* Invalid Name! Name should contains only characters and spaces *\n\n");
+            goto repeatNewFname;
+          }
           strcpy(emp->empName.firstName, updatedFname);
           printf("First name updated !!\n");
           break;
         case '2':
+        repeatNewLname:
           printf("\nEnter new last name: ");
           char *updatedLname = readStringFromUser();
+          if(validateNameAndNatioanlity(updatedLname, strlen(updatedLname)) == 0) {
+            printf("\n* Invalid Name! Name should contains only characters and spaces *\n\n");
+            goto repeatNewLname;
+          }
           strcpy(emp->empName.lastName, updatedLname);
           printf("Last name updated");
           break;
         case '3':
+        repeatNewOname:
           printf("\nEnter new nick name: ");
           char *updatedOname = readStringFromUser();
+          if(validateNameAndNatioanlity(updatedOname, strlen(updatedOname)) == 0) {
+            printf("\n* Invalid Name! Name should contains only characters and spaces *\n\n");
+            goto repeatNewOname;
+          }
           strcpy(emp->empName.otherName, updatedOname);
-          // fgets(emp->empName.otherName, sizeof(emp->empName.otherName),
-          // stdin);
           printf("Nick name updated");
           break;
         case '4':
@@ -77,27 +90,36 @@ void updateEmployeeByEmpID(struct Employee *emp) {
 
         switch (choice2) {
         case '1':
+        repeatNewAadhar:
           printf("\nEnter new Aadhar No.: ");
           char *updatedAdhaarNo = readStringFromUser();
+          if(validateAadhar(updatedAdhaarNo, strlen(updatedAdhaarNo)) == 0) {
+            printf("\n* Invalid Aadhar No.! Aadhar No. must have 12 digits *\n\n");
+            goto repeatNewAadhar;
+          }
           strcpy(emp->empIdInfo.aadharNumber, updatedAdhaarNo);
-          // fgets(emp->empIdInfo.aadharNumber,
-          // sizeof(emp->empIdInfo.aadharNumber), stdin);
           printf("Aadhar number updated");
           break;
         case '2':
+        repeatNewPan:
           printf("\nEnter new Pan No.: ");
           char *updatedPanNo = readStringFromUser();
+          if(validatePan(updatedPanNo, strlen(updatedPanNo)) == 0) {
+            printf("\n* Invalid Pan No.! Pan No. format is ABCDE1234Z *\n\n");
+            goto repeatNewPan;
+          }
           strcpy(emp->empIdInfo.panNumber, updatedPanNo);
-          // fgets(emp->empIdInfo.panNumber, sizeof(emp->empIdInfo.panNumber),
-          // stdin);
           printf("Pan number updated");
           break;
         case '3':
+        repeatNewNation:
           printf("\nEnter new Nationality: ");
           char *updatedNationality = readStringFromUser();
+          if (validateNameAndNatioanlity(updatedNationality, strlen(updatedNationality)) == 0) {
+            printf("\n* Invalid Nationality *\n\n");
+            goto repeatNewNation;
+          }
           strcpy(emp->empIdInfo.nationality, updatedNationality);
-          // fgets(emp->empIdInfo.nationality,
-          // sizeof(emp->empIdInfo.nationality), stdin);
           printf("Nationality updated");
           break;
         case '4':

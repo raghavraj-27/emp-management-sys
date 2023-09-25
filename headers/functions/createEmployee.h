@@ -19,8 +19,7 @@ repeatFName:
   printf("Enter First Name: ");
   fname = readStringFromUser();
   if (validateNameAndNatioanlity(fname, strlen(fname)) == 0) {
-    printf("\n* Invalid Name! Name should contains only characters and spaces "
-           "*\n\n");
+    printf("\n* Invalid Name! Name should contains only characters and spaces *\n\n");
     goto repeatFName;
   }
 
@@ -28,8 +27,7 @@ repeatLName:
   printf("Enter Last Name: ");
   lname = readStringFromUser();
   if (validateNameAndNatioanlity(lname, strlen(lname)) == 0) {
-    printf("\n* Invalid Name! Name should contains only characters and spaces "
-           "*\n\n");
+    printf("\n* Invalid Name! Name should contains only characters and spaces *\n\n");
     goto repeatLName;
   }
 
@@ -37,8 +35,7 @@ repeatOName:
   printf("Enter Nick Name: ");
   oname = readStringFromUser();
   if (validateNameAndNatioanlity(oname, strlen(oname)) == 0) {
-    printf("\n* Invalid Name! Name should contains only characters and spaces "
-           "*\n\n");
+    printf("\n* Invalid Name! Name should contains only characters and spaces *\n\n");
     goto repeatOName;
   }
 
